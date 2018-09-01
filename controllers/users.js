@@ -1,6 +1,6 @@
 const Monk = require("monk");
 const config= require("../config/config");
-const db = new Monk(config.DATABASE_URL+':'+config.DATABASE_PORT+'/'+config.DATABASE_NAME);
+const db = Monk(config.DATABASE_URL+':'+config.DATABASE_PORT+'/'+config.DATABASE_NAME);
 const User=db.get('user');
 
 const userController={
