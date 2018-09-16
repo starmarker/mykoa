@@ -11,11 +11,14 @@ router.get("/bar", function(ctx, next) {
 });
 router.all("/save",async (ctx,next)=>{
 	let result=await user.list(ctx);
-	//let result=await ctx.query;
-	//console.log(result);
-	// await next();
+	// let result=await ctx.query;
+	console.log("获取成功");
+	
+	
 	//ctx.response.type="json";
-	//ctx.response.body=result;
+	// ctx.body=result;
+	// ctx.body='结果';
+	await next();
 	
 });
 module.exports = router;
