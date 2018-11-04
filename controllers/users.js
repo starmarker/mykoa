@@ -1,7 +1,6 @@
-const Monk = require("monk");
-const config= require("../config/config");
-const db = Monk(config.DATABASE_URL+':'+config.DATABASE_PORT+'/'+config.DATABASE_NAME);
-const User=db.get('user');
+const db=require('../config/connect')
+const User = require('../schema/User')
+const schema = require('../schema/Schema')
 
 const userController={
 	async register(ctx){
